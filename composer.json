@@ -1,0 +1,29 @@
+{
+  "name": "larruda/dorg-to-jira",
+  "description": "A simple PHP script to import issues from Drupal.org into a Jira project.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lucas Arruda",
+      "email": "lunascar+composer@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "3.1.x-dev",
+    "EclipseGc/drupal-org-api": "dev-master#96a2c0cc68fd3154844839e3f7c3fe6d4393a1dd",
+    "chobie/jira-api-restclient": "dev-master",
+    "symfony/yaml": "3.1.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Larruda\\DorgToJira\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/EclipseGc/drupal-org-api"
+    }
+  ]
+}

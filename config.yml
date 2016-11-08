@@ -1,0 +1,6 @@
+jira: https://jiracloud.cit.com.br/
+user: lucas@ciandt.com
+key: DCOH
+fields:
+  customfield_12510:
+    value: DEV
