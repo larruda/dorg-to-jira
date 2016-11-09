@@ -5,8 +5,11 @@ namespace Larruda\DorgToJira\Command;
 use EclipseGc\DrupalOrg\Api\DrupalClient;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Exception\RuntimeException;
+use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use chobie\Jira\Api;
@@ -17,49 +20,87 @@ use Symfony\Component\Yaml\Exception\ParseException;
 
 class ImportCommand extends Command {
 
+    private $config = array();
+
+    private $node = NULL;
+
+    private $placeholders = array(
+        '%ISSUE_URL%' => 'getUrl',
+        '%ISSUE_TITLE%' => 'getTitle',
+        '%ISSUE_NID%' => 'getNid',
+        '%ISSUE_TYPE%' => 'getType',
+        '%ISSUE_BODY%' => 'getBody',
+    );
+
     protected function configure()
     {
         $this
-            ->setName('jira:import')
-            ->setDescription('Describe args behaviors')
-            ->addArgument('issue', InputArgument::REQUIRED);
+            ->setName('dorg-to-jira')
+            ->setDescription('Imports an issue from Drupal.org into a JIRA instance.')
+            ->setDefinition(
+                new InputDefinition(array(
+                    new InputOption('config', 'c', InputOption::VALUE_REQUIRED),
+                    new InputArgument('issue', InputArgument::REQUIRED, 'The issue id (nid) on Drupal.org.')
+                ))
+            );
+    }
+
+    protected function interact(InputInterface $input, OutputInterface $output) {
+        $configFile = $input->getOption('config') ? $input->getOption('config') : getcwd() . '/config.yml';
+        if (!file_exists($configFile)) {
+            throw new RuntimeException(sprintf('Config file is not accessible or does not exist: %s', $configFile));
+        }
+        try {
+            $this->config = Yaml::parse(file_get_contents($configFile));
+        } catch (ParseException $e) {
+            throw new RuntimeException(sprintf(
+                "Unable to parse the YAML config file: %s\n%s",
+                    $configFile,
+                    $e->getMessage())
+            );
+        }
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        try {
-            $config = Yaml::parse(file_get_contents('./config.yml'));
-        } catch (ParseException $e) {
-            printf("Unable to parse the YAML string: %s", $e->getMessage());
-        }
         $helper = $this->getHelper('question');
-        $issue_id = $input->getArgument('issue');
+        $issueId = $input->getArgument('issue');
 
         $question = new Question('Please enter your Jira password: ');
         $question
             ->setHidden(true)
             ->setHiddenFallback(false);
-        $jira_pass = $helper->ask($input, $output, $question);
+        $jiraPass = $helper->ask($input, $output, $question);
 
-        $client = DrupalClient::create();
-        $node = $client->getNode($issue_id);
-        $jira_url = rtrim($config['jira'], '/') . '/';
+        $dorg = DrupalClient::create();
+        $this->node = $dorg->getNode($issueId);
+        $jiraUrl = rtrim($this->config['jira'], '/') . '/';
 
-        $issue_summary = "#{$node->getNid()} {$node->getTitle()}";
-
-        $api = new Api($jira_url, new Basic($config['user'], $jira_pass));
-
-        try {
-            $response = $api->createIssue($config['key'], $issue_summary, 1, $config['fields']);
-
-            if (isset($response->getResult()['id']) && !empty($response->getResult()['id'])) {
-                $output->writeln("Issue created: {$jira_url}browse/{$response->getResult()['key']}");
-            } else {
-                $output->writeln("There was an error trying to create the Issue.");
-                $output->writeln("ERROR: {$response->getResult()['errors']['description']}");
+        array_walk($this->config['fields'], function(&$value) {
+            if (isset($this->placeholders[$value['value']])) {
+                $value = $this->node->{$this->placeholders[$value['value']]}();
             }
-        } catch (Api\UnauthorizedException $e) {
-            $output->writeln("ERROR: {$e->getMessage()}");
+        });
+
+        $issueSummary = "#{$this->node->getNid()} {$this->node->getTitle()}";
+        $jira = new Api($jiraUrl, new Basic($this->config['user'], $jiraPass));
+
+        $response = $jira->createIssue($this->config['key'], $issueSummary, 1, $this->config['fields']);
+
+        if (isset($response->getResult()['id']) && !empty($response->getResult()['id'])) {
+            $jira->createRemotelink(
+                $response->getResult()['key'],
+                array(
+                    'url' => $this->node->getUrl(),
+                    'title' => $this->node->getUrl()
+                )
+            );
+            $output->writeln("<info>Issue created:\n{$jiraUrl}browse/{$response->getResult()['key']}</info>");
+        } else {
+            throw new RuntimeException(sprintf(
+                "There was an error when trying to create the issue on JIRA.\n%s",
+                $response->getResult()['errors']['description']
+            ));
         }
     }
 }
