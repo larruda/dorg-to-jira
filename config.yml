@@ -1,6 +1,8 @@
-jira: https://jiracloud.cit.com.br/
-user: lucas@ciandt.com
-key: DCOH
+jira: https://jira.company.com/
+user: user@company.com
+key: PROJ
 fields:
   customfield_12510:
-    value: DEV
+    value: literal value
+  customfield_13551:
+    value: %ISSUE_TYPE%
