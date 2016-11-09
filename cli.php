@@ -8,10 +8,10 @@
  */
 require __DIR__.'/vendor/autoload.php';
 
-use Symfony\Component\Console\Application;
 use Larruda\DorgToJira\Command\ImportCommand;
+use Larruda\DorgToJira\SingleCommandApplication;
 
-$application = new Application();
+$application = new SingleCommandApplication();
 
 $application->add(new ImportCommand());
 
