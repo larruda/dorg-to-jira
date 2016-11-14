@@ -11,7 +11,7 @@
   ],
   "require": {
     "symfony/console": "3.1.x-dev",
-    "EclipseGc/drupal-org-api": "dev-master#96a2c0cc68fd3154844839e3f7c3fe6d4393a1dd",
+    "EclipseGc/drupal-org-api": "dev-master",
     "chobie/jira-api-restclient": "dev-master",
     "symfony/yaml": "3.1.x-dev"
   },
@@ -23,7 +23,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/EclipseGc/drupal-org-api"
+      "url": "https://github.com/larruda/drupal-org-api"
     }
   ],
   "bin": [ "cli.php" ]
