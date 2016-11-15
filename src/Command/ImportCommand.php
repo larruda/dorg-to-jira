@@ -20,17 +20,17 @@ use Symfony\Component\Yaml\Exception\ParseException;
 
 class ImportCommand extends Command {
 
-    private $config = array();
+    private $config = [];
 
     private $node = NULL;
 
-    private $placeholders = array(
+    private $placeholders = [
         '%ISSUE_URL%' => 'getUrl',
         '%ISSUE_TITLE%' => 'getTitle',
         '%ISSUE_NID%' => 'getNid',
         '%ISSUE_TYPE%' => 'getType',
         '%ISSUE_BODY%' => 'getBody',
-    );
+    ];
 
     protected function configure()
     {
@@ -38,10 +38,10 @@ class ImportCommand extends Command {
             ->setName('dorg-to-jira')
             ->setDescription('Imports an issue from Drupal.org into a JIRA instance.')
             ->setDefinition(
-                new InputDefinition(array(
+                new InputDefinition([
                     new InputOption('config', 'c', InputOption::VALUE_REQUIRED),
                     new InputArgument('issue', InputArgument::REQUIRED, 'The issue id (nid) on Drupal.org.')
-                ))
+                ])
             );
     }
 
@@ -73,11 +73,14 @@ class ImportCommand extends Command {
         $jiraPass = $helper->ask($input, $output, $question);
 
         $dorg = DrupalClient::create();
-        $this->node = $dorg->getNode($issueId);
+        $this->node = $dorg->getProjectIssue($issueId);
+        $project = $dorg->getNode($this->node->getProject()['id']);
+        $this->config['fields']['labels'] = [$project->getTitle()];
+
         $jiraUrl = rtrim($this->config['jira'], '/') . '/';
 
         array_walk($this->config['fields'], function(&$value) {
-            if (isset($this->placeholders[$value['value']])) {
+            if (isset($value['value']) && isset($this->placeholders[$value['value']])) {
                 $value = $this->node->{$this->placeholders[$value['value']]}();
             }
         });
@@ -90,10 +93,10 @@ class ImportCommand extends Command {
         if (isset($response->getResult()['id']) && !empty($response->getResult()['id'])) {
             $jira->createRemotelink(
                 $response->getResult()['key'],
-                array(
+                [
                     'url' => $this->node->getUrl(),
                     'title' => $this->node->getUrl()
-                )
+                ]
             );
             $output->writeln("<info>Issue created:\n{$jiraUrl}browse/{$response->getResult()['key']}</info>");
         } else {
