@@ -1,7 +1,8 @@
 {
   "name": "larruda/dorg-to-jira",
   "description": "A simple PHP script to import issues from Drupal.org into a Jira project.",
-  "minimum-stability": "prefer-stable",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "MIT",
   "authors": [
     {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b39705f1d32ea688191eb5eb2669939",
-    "content-hash": "0075ea6b7b40866de0279accdf6af5e1",
+    "hash": "f04070d624675204bf8f3fc247f539fb",
+    "content-hash": "71408b0f6d61332bc81cb5dc813b7d94",
     "packages": [
         {
             "name": "chobie/jira-api-restclient",
@@ -576,11 +576,11 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "eclipsegc/drupal-org-api": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
