@@ -4,40 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d484b0f8f9f0d32ab2fad1489e1a5eee",
-    "content-hash": "4e1a3dc475b617976ca7e34bd12bd74d",
+    "hash": "1b39705f1d32ea688191eb5eb2669939",
+    "content-hash": "0075ea6b7b40866de0279accdf6af5e1",
     "packages": [
         {
             "name": "chobie/jira-api-restclient",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chobie/jira-api-restclient.git",
-                "reference": "8eed514a8bc21a3a9b9e4eaca891c6ae27439474"
+                "reference": "68c082d2bbcab5e9ba97e8b46496b3b1afceed6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chobie/jira-api-restclient/zipball/8eed514a8bc21a3a9b9e4eaca891c6ae27439474",
-                "reference": "8eed514a8bc21a3a9b9e4eaca891c6ae27439474",
+                "url": "https://api.github.com/repos/chobie/jira-api-restclient/zipball/68c082d2bbcab5e9ba97e8b46496b3b1afceed6f",
+                "reference": "68c082d2bbcab5e9ba97e8b46496b3b1afceed6f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "aik099/coding-standard": "dev-master",
-                "phpunit/phpunit": "^4.1|^5.0",
-                "squizlabs/php_codesniffer": "^2.6"
+                "php": ">=5.2.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "chobie\\": "src"
+                "psr-0": {
+                    "Jira_": "./"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -48,16 +43,16 @@
                 {
                     "name": "Shuhei Tanuma",
                     "email": "chobieeee@php.net",
-                    "homepage": "http://chobie.github.io/"
+                    "homepage": "http://blog.stfalcon.com"
                 }
             ],
-            "description": "JIRA REST API Client",
+            "description": "JIRA REST API.",
             "keywords": [
                 "api",
                 "jira",
                 "rest"
             ],
-            "time": "2016-10-08 12:37:50"
+            "time": "2014-07-27 11:40:44"
         },
         {
             "name": "eclipsegc/drupal-org-api",
@@ -354,16 +349,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "3.1.x-dev",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6d8d72bf47a051e012209625070df22af203af0f"
+                "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6d8d72bf47a051e012209625070df22af203af0f",
-                "reference": "6d8d72bf47a051e012209625070df22af203af0f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/c99da1119ae61e15de0e4829196b9fba6f73d065",
+                "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +406,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-06 16:23:47"
+            "time": "2016-10-06 01:44:51"
         },
         {
             "name": "symfony/debug",
@@ -531,16 +526,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "3.1.x-dev",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "cc82ea636b5d55c1385f92cdb1083391e9577ee3"
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/cc82ea636b5d55c1385f92cdb1083391e9577ee3",
-                "reference": "cc82ea636b5d55c1385f92cdb1083391e9577ee3",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
                 "shasum": ""
             },
             "require": {
@@ -576,17 +571,14 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-04 10:57:19"
+            "time": "2016-10-24 18:41:13"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "symfony/console": 20,
-        "eclipsegc/drupal-org-api": 20,
-        "chobie/jira-api-restclient": 20,
-        "symfony/yaml": 20
+        "eclipsegc/drupal-org-api": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
