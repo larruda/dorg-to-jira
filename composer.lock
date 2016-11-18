@@ -4,35 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "39c44e2c51909ac73812b574c8f3c0aa",
-    "content-hash": "862fef70ae8ee15ed3c306fb6f900a3a",
+    "hash": "f4cdc3401ee2e37121e00f2ed9c391e3",
+    "content-hash": "0f63fe70af7510083665235df61bd9d7",
     "packages": [
         {
             "name": "chobie/jira-api-restclient",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chobie/jira-api-restclient.git",
-                "reference": "68c082d2bbcab5e9ba97e8b46496b3b1afceed6f"
+                "reference": "db8c1f095e412b52ef57c27fa4326b681a7e668b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chobie/jira-api-restclient/zipball/68c082d2bbcab5e9ba97e8b46496b3b1afceed6f",
-                "reference": "68c082d2bbcab5e9ba97e8b46496b3b1afceed6f",
+                "url": "https://api.github.com/repos/chobie/jira-api-restclient/zipball/db8c1f095e412b52ef57c27fa4326b681a7e668b",
+                "reference": "db8c1f095e412b52ef57c27fa4326b681a7e668b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.4"
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "aik099/coding-standard": "dev-master",
+                "phpunit/phpunit": "^4.1|^5.0",
+                "squizlabs/php_codesniffer": "^2.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Jira_": "./"
+                "psr-4": {
+                    "chobie\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -43,29 +48,29 @@
                 {
                     "name": "Shuhei Tanuma",
                     "email": "chobieeee@php.net",
-                    "homepage": "http://blog.stfalcon.com"
+                    "homepage": "http://chobie.github.io/"
                 }
             ],
-            "description": "JIRA REST API.",
+            "description": "JIRA REST API Client",
             "keywords": [
                 "api",
                 "jira",
                 "rest"
             ],
-            "time": "2014-07-27 11:40:44"
+            "time": "2016-11-16 16:27:27"
         },
         {
             "name": "eclipsegc/drupal-org-api",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/larruda/drupal-org-api.git",
-                "reference": "b070bf552441f29b261289b51480f9df2e49148c"
+                "reference": "7d1870a25dc7609345696b8d5c302a91b95468b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/larruda/drupal-org-api/zipball/b070bf552441f29b261289b51480f9df2e49148c",
-                "reference": "b070bf552441f29b261289b51480f9df2e49148c",
+                "url": "https://api.github.com/repos/larruda/drupal-org-api/zipball/7d1870a25dc7609345696b8d5c302a91b95468b6",
+                "reference": "7d1870a25dc7609345696b8d5c302a91b95468b6",
                 "shasum": ""
             },
             "require": {
@@ -93,9 +98,9 @@
                 "drupal.org"
             ],
             "support": {
-                "source": "https://github.com/larruda/drupal-org-api/tree/dev-master"
+                "source": "https://github.com/larruda/drupal-org-api/tree/dev-develop"
             },
-            "time": "2016-11-12 01:59:46"
+            "time": "2016-11-18 01:27:27"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -576,11 +581,12 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "eclipsegc/drupal-org-api": 20
+        "eclipsegc/drupal-org-api": 20,
+        "chobie/jira-api-restclient": 20
     },
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"

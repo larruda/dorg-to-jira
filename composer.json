@@ -1,8 +1,7 @@
 {
   "name": "larruda/dorg-to-jira",
   "description": "A simple PHP script to import issues from Drupal.org into a Jira project.",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
@@ -19,8 +18,8 @@
   "require": {
     "php": ">=5.4.0",
     "symfony/console": "~3.1",
-    "EclipseGc/drupal-org-api": "dev-master",
-    "chobie/jira-api-restclient": "~1.0",
+    "EclipseGc/drupal-org-api": "dev-develop",
+    "chobie/jira-api-restclient": "dev-master",
     "symfony/yaml": "~3.1"
   },
   "autoload": {
