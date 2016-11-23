@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f4cdc3401ee2e37121e00f2ed9c391e3",
-    "content-hash": "0f63fe70af7510083665235df61bd9d7",
+    "hash": "504df78441a5eca5d9f7cedb35ba56f7",
+    "content-hash": "9688d04ccfaf18a0aab303dd5abcafe5",
     "packages": [
         {
             "name": "chobie/jira-api-restclient",
@@ -58,49 +58,6 @@
                 "rest"
             ],
             "time": "2016-11-16 16:27:27"
-        },
-        {
-            "name": "eclipsegc/drupal-org-api",
-            "version": "dev-develop",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/larruda/drupal-org-api.git",
-                "reference": "7d1870a25dc7609345696b8d5c302a91b95468b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/larruda/drupal-org-api/zipball/7d1870a25dc7609345696b8d5c302a91b95468b6",
-                "reference": "7d1870a25dc7609345696b8d5c302a91b95468b6",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "5.1.*",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EclipseGc\\DrupalOrg\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Vanderwater"
-                }
-            ],
-            "description": "Drupal.org API SDK for PHP.",
-            "homepage": "https://github.com/EclipseGc/drupal-org-api",
-            "keywords": [
-                "drupal",
-                "drupal.org"
-            ],
-            "support": {
-                "source": "https://github.com/larruda/drupal-org-api/tree/dev-develop"
-            },
-            "time": "2016-11-18 01:27:27"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -262,6 +219,17 @@
             "time": "2014-10-12 19:18:40"
         },
         {
+            "name": "larruda/drupal-org-api",
+            "version": "master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/larruda/drupal-org-api/archive/package.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -354,16 +322,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.1.6",
+            "version": "v3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065"
+                "reference": "5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/c99da1119ae61e15de0e4829196b9fba6f73d065",
-                "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065",
+                "url": "https://api.github.com/repos/symfony/console/zipball/5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6",
+                "reference": "5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6",
                 "shasum": ""
             },
             "require": {
@@ -411,20 +379,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-06 01:44:51"
+            "time": "2016-11-16 22:17:09"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.1.6",
+            "version": "v3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8"
+                "reference": "c058661c32f5b462722e36d120905940089cbd9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
-                "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/c058661c32f5b462722e36d120905940089cbd9a",
+                "reference": "c058661c32f5b462722e36d120905940089cbd9a",
                 "shasum": ""
             },
             "require": {
@@ -468,7 +436,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:02:40"
+            "time": "2016-11-15 12:55:20"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -531,16 +499,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.6",
+            "version": "v3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
+                "reference": "9da375317228e54f4ea1b013b30fa47417e84943"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/9da375317228e54f4ea1b013b30fa47417e84943",
+                "reference": "9da375317228e54f4ea1b013b30fa47417e84943",
                 "shasum": ""
             },
             "require": {
@@ -576,14 +544,14 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 18:41:13"
+            "time": "2016-11-18 21:05:29"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "eclipsegc/drupal-org-api": 20,
+        "larruda/drupal-org-api": 20,
         "chobie/jira-api-restclient": 20
     },
     "prefer-stable": false,
