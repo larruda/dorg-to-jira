@@ -8,10 +8,10 @@
 ## Installation
 
 Download the PHAR somewhere in your filesystem. 
-If you want it globally available move it to a directory listed in your system's $PATH environment variable.
+If you want it globally available move it to a directory listed in your system's *$PATH* environment variable.
 You can optionally rename the file and remove the .phar extension, so it's more like a "real bin".
 
-Below is an example using OSX or Linux:
+Below is an example using *OSX* or *Linux*:
 
 ```sh
 curl -O https://github.com/larruda/dorg-to-jira/releases/download/0.0.1/dorg-to-jira.phar
@@ -26,7 +26,7 @@ A few motivating and useful examples of how your product can be used. Spice this
 
 I'm assuming you have Composer installed and globally available on your OS.
 If that's not the case, follow the instructions at [https://getcomposer.org](https://getcomposer.org).
-With composer properly installed and functional, clone this repository, cd into it and download all dependencies.
+With Composer properly installed and functional, clone this repository, cd into it and download all dependencies.
 
 ```sh
 git clone git@github.com:larruda/dorg-to-jira.git
@@ -35,13 +35,14 @@ composer install
 ```
 
 After that and considering no errors have been thrown, go ahead and build the PHAR archive.
-If you are curious about what this do underneath or need to debug step-by-step, read the project's [composer.json](composer.json).
+If you are curious about what this executes underneath or need to debug step-by-step, read the project's [composer.json](composer.json).
 
 ```sh
 composer run-script build-phar
 ```
 
-You should have a *dorg-to-jira.phar* inside a *bin/* directory in the project root.
+You should have a **dorg-to-jira.phar** inside a *bin/* directory in the project root. 
+If you want it globally available in your system follow the [Installation](Installation) instructions.
 
 ## Release History
 
