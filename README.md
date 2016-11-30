@@ -42,22 +42,37 @@ composer run-script build-phar
 ```
 
 You should have a **dorg-to-jira.phar** inside a *bin/* directory in the project root. 
-If you want it globally available in your system follow the [Installation](Installation) instructions.
+If you want it globally available in your system follow the [Installation](#installation) instructions.
 
 ## Release History
 
 * 0.2.1
     * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
 * 0.0.1
-    * Work in progress
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/9437dbe6c765ceeb08f7b2092994d1c4740b0695">view &bull;</a> Initial commit</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/6b28364964ef440526860dd6dcfd60bf09267ab7">view &bull;</a> Initial commit.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/72b369ff4445ab1cb094a0917456682a15df67a8">view &bull;</a> Added compiled binary.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/94780f574e47f51ee4592e6dbaa853531925082e">view &bull;</a> Changed into a single command only application.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/02e2e3ad99eb797478688248a49458d1ce4bd00a">view &bull;</a> Replaced contents of the file to an example for reference.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/79221c5ea10bb4a2aabd4cf9b938dd9fa69a4dbe">view &bull;</a> Extend Console’s Application class in order to provide a default command.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/e95761d4b82f22a3654bb6c89b3adfade809160d">view &bull;</a> Added support for placeholders. Added argument validation. Added support for remote links.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/e74040a1b0cae6c7c90e0de8a123e9dd8bb6077d">view &bull;</a> Pointed “drupal-org-api” to my own fork.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/3f20f9765d4bc0e63934559f58b689752d923b25">view &bull;</a> Publishing new PHAR package.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/125af6c23602bc349178a1fb3cc67920ab423598">view &bull;</a> Changed to new array notation.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/7638aa5513e88b8a8861c9755440f820ae91ea3e">view &bull;</a> Changes dependencies to stable versions.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/ddc41c4fbf16c193d32ef56a552d9e3183743a43">view &bull;</a> Changed composer minimum stability from stable to prefer-stable.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/4a597138eb82e39c2e2582e9efbe0da5a2837a83">view &bull;</a> Changed composer minimum stability from stable to prefer-stable.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/500d7ee2f22ab909926cec3f3d8cf714ee19479e">view &bull;</a> Removed composer.lock.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/af34758be41f340c32b02fdc56616212e250103c">view &bull;</a> Trying a weird approach…</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/4dc8efc6e00a7a4e5db35d0b3074ee1f373e9afd">view &bull;</a> Adding composer.lock back again.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/a2065519b14926916ab93ee6fcc0d58a2e307562">view &bull;</a> Adding initial Travis build descriptor file.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/5ca37cb0082630ca75b2ee1a9158ad8e77ad9de0">view &bull;</a> Adding initial Travis build descriptor file.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/fae31cfbd94a242ca213950125972897aec15a3a">view &bull;</a> Trying to make this PHAR work…</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/1d76dd3eca03789a579ec5d5ed508d02b51a10cb">view &bull;</a> Added fork as a package dependency and generated PHAR package.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/e4a1e62ecc599b0b056c4b2847a505cff66a57fb">view &bull;</a> Updated README instructions.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/0c5fd911f9c8d138fb45d18dc5812f3dd59e1242">view &bull;</a> Removed PHAR archive from version control.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/c00f200f301cc1e83a78751d3575e3c66539d863">view &bull;</a> Updated Travis build script.</li>
+    * <li> <a href="http://github.com/larruda/dorg-to-jira/commit/7d00a501be6a674723e188b9a3f03012fd6dee80">view &bull;</a> Updated README instructions.</li>
 
 ## Meta
 
