@@ -14,3 +14,6 @@ cache:
 
 install:
  - composer install --no-interaction
+
+script:
+ - composer run-script build-phar
