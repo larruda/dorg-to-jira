@@ -26,7 +26,14 @@ You can optionally set the path of the configuration file with the `-c` argument
 ./dorg-to-jira.phar 1234567 [-c|--config path/to/config.yml]
 ```
 
+It will prompt you for your JIRA password on every usage. 
+For security purposes we don't hold passwords or accept as argument/configuration.
+
 ## Configuration
+
+This tools needs a set of configuration values in order to work. 
+Mandatory ones are *jira*, *user* and *key* which are the URL to the JIRA instance, the username and project key respectively.
+Custom fields are optional.
 
 ```yaml
 jira: https://jira.company.com/
