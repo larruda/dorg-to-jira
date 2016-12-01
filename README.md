@@ -3,6 +3,13 @@
 
 [![Build Status][travis-image]][travis-url]
 
+## Features
+
+* Imports title by default in the format '#1234567 This is the issue title'
+* Supports JIRA custom fields and a few available tokens for value replacement
+* Adds the project's name (module/theme) as a Label to the issue in JIRA
+* Adds an external link to the issue in JIRA referring to the issue at Drupal.org.
+
 ## Installation
 
 Download the PHAR somewhere in your filesystem and make it executable.
