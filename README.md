@@ -18,7 +18,38 @@ mv dorg-to-jira.phar /usr/local/bin/dorg-to-jira
 
 ## Usage 
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Simply run the **dorg-to-jira** passing along the ID (nid) of the issue at Drupal.org.
+You can optionally set the path of the configuration file with the *-c* argument. By default it looks for a *config.yml* in the current directory.
+
+```sh
+./dorg-to-jira.phar 1234567 [-c|--config path/to/config.yml]
+```
+
+## Configuration
+
+```yaml
+jira: https://jira.company.com/
+user: user@company.com
+key: PROJ
+fields:
+  customfield_12510:
+    value: DEV
+  customfield_12711:
+    value: %ISSUE_TYPE%
+```
+
+### Available Tokens
+
+You can use the following tokens as values for custom fields in the configuration file. 
+They will be replaced with the value according to the issue being imported.
+
+| Token name | description |
+| ---------- | ----------- |
+|%ISSUE_URL% | The absolute URL to the issue at Drupal.org. |
+|%ISSUE_NID% | The Node ID of the issue. |
+|%ISSUE_TYPE% | The issue type (e.g: bug, feature request, etc |
+|%ISSUE_BODY% | The issue body text (can contain HTML) |
+        
 
 ## Build from source
 
