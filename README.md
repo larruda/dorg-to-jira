@@ -5,7 +5,7 @@
 
 ## Installation
 
-Download the PHAR somewhere in your filesystem. 
+Download the PHAR somewhere in your filesystem and make it executable.
 If you want it globally available move it to a directory listed in your system's *$PATH* environment variable.
 You can optionally rename the file and remove the .phar extension, so it's more like a "real bin".
 
@@ -13,6 +13,7 @@ Below is an example using *OSX* or *Linux*:
 
 ```sh
 curl -O https://github.com/larruda/dorg-to-jira/releases/download/1.0.0/dorg-to-jira.phar
+chmod +x dorg-to-jira.phar
 mv dorg-to-jira.phar /usr/local/bin/dorg-to-jira
 ```
 
