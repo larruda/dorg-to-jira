@@ -12,14 +12,14 @@ You can optionally rename the file and remove the .phar extension, so it's more 
 Below is an example using *OSX* or *Linux*:
 
 ```sh
-curl -O https://github.com/larruda/dorg-to-jira/releases/download/0.0.1/dorg-to-jira.phar
+curl -O https://github.com/larruda/dorg-to-jira/releases/download/1.0.0/dorg-to-jira.phar
 mv dorg-to-jira.phar /usr/local/bin/dorg-to-jira
 ```
 
 ## Usage 
 
-Simply run the **dorg-to-jira** passing along the ID (nid) of the issue at Drupal.org.
-You can optionally set the path of the configuration file with the *-c* argument. By default it looks for a *config.yml* in the current directory.
+Simply run **dorg-to-jira** passing along the ID (nid) of the issue at *Drupal.org*.
+You can optionally set the path of the configuration file with the `-c` argument. By default it looks for a `config.yml` in the current directory.
 
 ```sh
 ./dorg-to-jira.phar 1234567 [-c|--config path/to/config.yml]
@@ -41,7 +41,7 @@ fields:
 ### Available Tokens
 
 You can use the following tokens as values for custom fields in the configuration file. 
-They will be replaced with the value according to the issue being imported.
+They will be replaced by the value according to the issue being imported.
 
 | Token name | description |
 | ---------- | ----------- |
@@ -51,11 +51,11 @@ They will be replaced with the value according to the issue being imported.
 |%ISSUE_BODY% | The issue body text (can contain HTML) |
         
 
-## Build from source
+## Building from source
 
-I'm assuming you have Composer installed and globally available on your OS.
+I'm assuming you have *Composer *installed and globally available on your OS.
 If that's not the case, follow the instructions at [https://getcomposer.org](https://getcomposer.org).
-With Composer properly installed and functional, clone this repository, cd into it and download all dependencies.
+With *Composer* properly installed and functional, clone this repository, cd into it and download all dependencies.
 
 ```sh
 git clone git@github.com:larruda/dorg-to-jira.git
