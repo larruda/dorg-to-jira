@@ -75,7 +75,7 @@ class ImportCommand extends Command {
         $dorg = DrupalClient::create();
         $this->node = $dorg->getProjectIssue($issueId);
         $project = $dorg->getNode($this->node->getProject()['id']);
-        $this->config['fields']['labels'] = [$project->getTitle()];
+        $this->config['fields']['labels'] = [preg_replace('!\s+!', '_', $project->getTitle())];
 
         $jiraUrl = rtrim($this->config['jira'], '/') . '/';
 
