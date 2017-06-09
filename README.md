@@ -40,10 +40,11 @@ For security purposes we don't hold passwords or accept as argument/configuratio
 
 This tools needs a set of configuration values in order to work. 
 Mandatory ones are *jira*, *user* and *key* which are the URL to the JIRA instance, the username and project key respectively.
-Custom fields are optional.
+Custom fields and endpoint are optional.
 
 ```yaml
 jira: https://jira.company.com/
+endpoint: https://api.jira.company.com/
 user: user@company.com
 key: PROJ
 fields:

@@ -79,6 +79,15 @@ class ImportCommand extends Command {
 
         $jiraUrl = rtrim($this->config['jira'], '/') . '/';
 
+        // Check if exist endpoint in config.yml
+        //If it does not exist use the jira of config.yml
+        if (isset($this->config['endpoint'])) {
+          $endpoint = $this->config['endpoint'];
+        }
+        else {
+          $endpoint = $jiraUrl;
+        }
+
         array_walk($this->config['fields'], function(&$value) {
             if (isset($value['value']) && isset($this->placeholders[$value['value']])) {
                 $value = $this->node->{$this->placeholders[$value['value']]}();
@@ -86,7 +95,7 @@ class ImportCommand extends Command {
         });
 
         $issueSummary = "#{$this->node->getNid()} {$this->node->getTitle()}";
-        $jira = new Api($jiraUrl, new Basic($this->config['user'], $jiraPass));
+        $jira = new Api($endpoint, new Basic($this->config['user'], $jiraPass));
 
         $response = $jira->createIssue($this->config['key'], $issueSummary, 1, $this->config['fields']);
 
